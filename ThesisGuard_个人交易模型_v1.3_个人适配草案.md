@@ -185,7 +185,7 @@ D≥7% 后恢复必须先完成原因复盘、现有主动仓及订单核对、�
 - 从快照隐含价 144.17 元至 135.38 元，当前主动风险约 1,758 元（费用等另计），不是 1,500 元；区别在于约 258.40 元浮盈回吐。
 - 如未来正式采用本草案账户暂停规则，其可能要求早于单股亏损线退出；本稿没有代用户启用该变化。以最终登记的旧仓协议与账户规则优先级为准。
 
-完整草案见 [生益科技持仓风险卡](/Users/qianduoduo/Desktop/AI_app/tradingModel/生益科技_持仓风险卡_2026-09-14.md)。券商条件单尚未创建。
+完整草案见 [生益科技持仓风险卡](./生益科技_持仓风险卡_2026-09-14.md)。券商条件单尚未创建。
 
 ## 9. 一张交易卡：下单前只核对这些
 
@@ -234,7 +234,7 @@ D≥7% 后恢复必须先完成原因复盘、现有主动仓及订单核对、�
 
 ## 11. 来源、限制与版本记录
 
-- 原始本地模型：[ThesisGuard v1.2](/Users/qianduoduo/Desktop/AI_app/tradingModel/ThesisGuard_个人交易模型_v1.2_可测量版.md)。逐项评审依据见[适配评估与访谈记录](/Users/qianduoduo/Desktop/AI_app/tradingModel/ThesisGuard_v1.2_适配评估与访谈记录_2026-09-14.md)。
+- 原始本地模型：[ThesisGuard v1.2](./ThesisGuard_个人交易模型_v1.2_可测量版.md)。逐项评审依据见[适配评估与访谈记录](./ThesisGuard_v1.2_适配评估与访谈记录_2026-09-14.md)。
 - [上交所《交易规则（2026 年修订）》发布页](https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/exchange/c/c_20260424_10816482.shtml)：含生效安排与部分条文暂缓提示。普通 A 股的交收前卖出限制及实际竞价申报规则应进入执行验证；具体市场/板块/品种需分别核对。
 - [东财掘金官方条件单说明](https://emt.18.cn/api/quant-help/ai-strategy/ai-strategy.html)：说明该终端的自动委托、有效性及终端关闭影响。仅能证明这个产品的机制，不据此假定用户手机东方财富客户端相同。
 - [Bailey 等：The Probability of Backtest Overfitting](https://www.davidhbailey.com/dhbpapers/backtest-prob.pdf)：用于提醒反复试参数、样本内优选与验证污染问题；本稿没有据此推导固定样本数即可有效。
