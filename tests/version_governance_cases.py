@@ -60,6 +60,10 @@ class VersionGovernanceCases(unittest.TestCase):
             VALIDATION_PLAN,
             ADR,
             ROOT / "tests" / "experimental_position_rule_cases.py",
+            ROOT / "tests" / "historical_regime_rule_cases.py",
+            ROOT / "tests" / "t_overlay_rule_cases.py",
+            ROOT / "Historical_Regime_TOverlay_审计与实现报告_2026-09-14.md",
+            ROOT / "case_studies" / "兆易创新_603986_Historical_Regime_Study.md",
         ]
         missing = [str(path.relative_to(ROOT)) for path in required if not path.is_file()]
         self.assertEqual([], missing)
@@ -134,6 +138,8 @@ class VersionGovernanceCases(unittest.TestCase):
             "v1.3_validation_plan.md",
             "ADR-001-portfolio-capacity.md",
             "experimental_position_rule_cases.py",
+            "historical_regime_rule_cases.py",
+            "t_overlay_rule_cases.py",
         ):
             self.assertIn(required_name, readme)
 
@@ -160,6 +166,10 @@ class VersionGovernanceCases(unittest.TestCase):
             self.assertIn(expectation, text)
         self.assertIn("本文不是正式实盘系统", text)
         self.assertIn("正式系统持续为 v1.2", text)
+        self.assertIn("Historical Regime | `SHADOW`", text)
+        self.assertIn("T_OVERLAY | `SHADOW`", text)
+        self.assertIn("反 T", text)
+        self.assertIn("DEFER", text)
 
     def test_adr_requires_human_decision(self):
         text = ADR.read_text(encoding="utf-8")

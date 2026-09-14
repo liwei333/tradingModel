@@ -19,6 +19,6 @@
 |---|---|---|
 | [个人交易系统 v1.0](./个人交易系统_v1.0_基于ThesisGuard_v1.3.md) | `HISTORICAL` | 初始交易系统版本 |
 | [个人交易系统 v1.1](./个人交易系统_v1.1_基于ThesisGuard_v1.3.md) | `HISTORICAL` | 正式 v1.2 的完整修订基线 |
-| [个人交易系统 v1.3 产业趋势波段版 Candidate](./个人交易系统_v1.3_产业趋势波段版_CANDIDATE.md) | `CANDIDATE` | 尚未成为正式实盘系统；Setup A/C 与 Trend Hold 仍为 SHADOW |
+| [个人交易系统 v1.3 产业趋势波段版 Candidate](./个人交易系统_v1.3_产业趋势波段版_CANDIDATE.md) | `CANDIDATE` | 尚未成为正式实盘系统；Setup A/C、Trend Hold、Historical Regime 与 T_OVERLAY 仍为 SHADOW |
 
 移动到本目录只表示版本归档，不改变历史正文，也不产生实盘启用。Candidate 未经人工确认不得标为 `ACTIVE`。

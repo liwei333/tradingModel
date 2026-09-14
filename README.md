@@ -23,7 +23,9 @@
 | v1.2 实验仓验收 | [实验仓 v1.2 验收案例](./实验仓_v1.2_验收案例.md) | `ACTIVE` | 记录 8 个必测案例、36 项文本边界及自动测试范围；不替代 v1.2 正文 |
 | v1.2 产业趋势波段审计 | [v1.2 产业趋势中短期波段适配审计](./个人交易系统_v1.2_产业趋势中短期波段适配审计_2026-09-14.md) | `CANDIDATE` | 审计结论及 v1.3 建议来源；其中建议不自动生效 |
 | v1.3 Candidate | [个人交易系统 v1.3 产业趋势波段版 Candidate](./IterationRecord/个人交易系统_v1.3_产业趋势波段版_CANDIDATE.md) | `CANDIDATE` | 建立下一版本框架；不替代 v1.2，不是正式实盘系统 |
-| v1.3 验证计划 | [v1.3 validation plan](./v1.3_validation_plan.md) | `CANDIDATE` | 保存 A/B/C 信号、退出平行结果、MFE、MAE、Expectancy、Profit Factor 与 20/60 日结果 |
+| v1.3 验证计划 | [v1.3 validation plan](./v1.3_validation_plan.md) | `CANDIDATE` | 保存 A/B/C、退出路径、Historical Regime、T_OVERLAY、MFE/MAE、净成本和 20/60 日结果 |
+| Historical Regime / T_OVERLAY 审计 | [WP-V13-02 审计与实现报告](./Historical_Regime_TOverlay_审计与实现报告_2026-09-14.md) | `CANDIDATE` | 记录必要性、冲突、验证与 SHADOW 落地结论；不产生交易权限 |
+| 兆易创新 Historical Regime 案例 | [603986 Historical Regime Study](./case_studies/兆易创新_603986_Historical_Regime_Study.md) | `SHADOW` | 验证时点化卡片和可比期方法；不产生当前买入建议 |
 | 组合容量决议 | [ADR-001：主动股票容量与 Replacement PK](./decisions/ADR-001-portfolio-capacity.md) | `CANDIDATE` | 采纳与不采纳方案均待人工确认；当前不生效 |
 
 当前模型治理存在一个已披露状态：模型 v1.3 文件名和正文均为草案，因此本轮不把它擅自标为 `ACTIVE`。正式系统 v1.2 已经明确引用并固化的模型规则继续有效；模型文件本身是否升为正式版本，需另行决议。
@@ -44,6 +46,8 @@
 | 亏损补仓 | `ACTIVE BASELINE` | 继续禁止 |
 | 普通盈利加仓 | `CANDIDATE（DEFER）` | 当前不建立实盘入口；v1.2 实验仓一次升级仍按其原规则处理 |
 | 最多 4 只与第 5 只 Replacement PK | `CANDIDATE` | 仅在 ADR-001 讨论，未经人工确认不生效 |
+| Historical Regime | `SHADOW` | 只作 Research/Holding Context；不得形成第二套买点或覆盖硬规则 |
+| T_OVERLAY | `SHADOW` | 只记录正 T 假设；反 T 与任何真实下单继续 `DEFER` |
 
 ## 历史版本与辅助材料
 
@@ -62,6 +66,8 @@
 |---|---|---|
 | [experimental_position_rule_cases.py](./tests/experimental_position_rule_cases.py) | `ACTIVE` | v1.2 实验仓的合成门禁、风险算术、转换不变量；不接行情或券商 |
 | [version_governance_cases.py](./tests/version_governance_cases.py) | `ACTIVE` | 版本文件、状态、相对链接、v1.2 规则文本指纹及 ADR 未生效约束 |
+| [historical_regime_rule_cases.py](./tests/historical_regime_rule_cases.py) | `CANDIDATE` | Historical Regime 的时点化、UNKNOWN/FAIL 和硬规则不可覆盖 |
+| [t_overlay_rule_cases.py](./tests/t_overlay_rule_cases.py) | `CANDIDATE` | T Overlay 的 Core、Thesis、RED、T+1、数量、风险、成本与期末数量门禁 |
 
 在项目根目录执行全部标准库测试：
 

@@ -25,6 +25,7 @@
 - 当前交易模型文档：[`ThesisGuard v1.3 个人适配草案`](./last/ThesisGuard_个人交易模型_v1.3_个人适配草案.md)。其正文仍声明为候选规则、未自动生效；不得因位于 `last/` 而把其未被 v1.2 固化的候选参数标为 `ACTIVE`。
 - v1.3 产业趋势波段系统位于 [`IterationRecord/个人交易系统_v1.3_产业趋势波段版_CANDIDATE.md`](./IterationRecord/个人交易系统_v1.3_产业趋势波段版_CANDIDATE.md)，整体状态为 `CANDIDATE`。
 - Setup A、Setup C、IndustryConfirm 和 Trend Hold 仍为 `SHADOW`；只记录，不下单，不改变真实保护价。
+- Historical Regime 与 T_OVERLAY 仍为 `SHADOW`；前者只提供研究/持有语境，后者只记录正 T 假设。反 T 和任何真实做 T 继续 `DEFER`。
 - Setup B、NORMAL 市场过滤、EXPERIMENTAL、RED、账户风控、禁止亏损补仓和 v1.2 当前退出继续按正式 v1.2 执行。
 - 普通盈利加仓为 `CANDIDATE（DEFER）`。v1.2 已定义的一次 EXPERIMENTAL→NORMAL 升级是既有有限例外，不得扩写成普通加仓。
 - “主动股票最多 4 只／第 5 只 Replacement PK”仅存在于 [`ADR-001`](./decisions/ADR-001-portfolio-capacity.md)，等待人工确认，不参与当前准入或退出。
