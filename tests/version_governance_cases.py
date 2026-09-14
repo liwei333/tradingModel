@@ -13,8 +13,11 @@ from urllib.parse import unquote
 
 
 ROOT = Path(__file__).resolve().parents[1]
-V12 = ROOT / "个人交易系统_v1.2_基于ThesisGuard_v1.3.md"
-CANDIDATE = ROOT / "个人交易系统_v1.3_产业趋势波段版_CANDIDATE.md"
+ITERATION_RECORD = ROOT / "IterationRecord"
+LAST = ROOT / "last"
+V12 = LAST / "个人交易系统_v1.2_基于ThesisGuard_v1.3.md"
+CURRENT_MODEL = LAST / "ThesisGuard_个人交易模型_v1.3_个人适配草案.md"
+CANDIDATE = ITERATION_RECORD / "个人交易系统_v1.3_产业趋势波段版_CANDIDATE.md"
 VALIDATION_PLAN = ROOT / "v1.3_validation_plan.md"
 ADR = ROOT / "decisions" / "ADR-001-portfolio-capacity.md"
 
@@ -45,8 +48,12 @@ def canonical_rule_text(text: str) -> str:
 class VersionGovernanceCases(unittest.TestCase):
     def test_required_files_exist(self):
         required = [
+            ROOT / "AGENTS.md",
+            ROOT / ".gitignore",
             ROOT / "README.md",
             V12,
+            CURRENT_MODEL,
+            ITERATION_RECORD / "README.md",
             ROOT / "实验仓_v1.2_验收案例.md",
             ROOT / "个人交易系统_v1.2_产业趋势中短期波段适配审计_2026-09-14.md",
             CANDIDATE,
@@ -56,6 +63,40 @@ class VersionGovernanceCases(unittest.TestCase):
         ]
         missing = [str(path.relative_to(ROOT)) for path in required if not path.is_file()]
         self.assertEqual([], missing)
+
+    def test_last_contains_only_current_system_and_model(self):
+        expected = {V12.name, CURRENT_MODEL.name}
+        actual = {path.name for path in LAST.iterdir() if path.is_file()}
+        self.assertEqual(expected, actual)
+        self.assertFalse((ROOT / V12.name).exists())
+        self.assertFalse((ROOT / CURRENT_MODEL.name).exists())
+
+    def test_versioned_system_and_model_docs_are_grouped_below_root(self):
+        iteration_files = (
+            "ThesisGuard_个人交易模型_v1.2_可测量版.md",
+            "个人交易系统_v1.0_基于ThesisGuard_v1.3.md",
+            "个人交易系统_v1.1_基于ThesisGuard_v1.3.md",
+            "个人交易系统_v1.3_产业趋势波段版_CANDIDATE.md",
+        )
+        for name in iteration_files:
+            self.assertFalse((ROOT / name).exists(), name)
+            self.assertTrue((ITERATION_RECORD / name).is_file(), name)
+
+    def test_other_document_types_remain_at_their_original_level(self):
+        top_level_files = (
+            ".gitignore",
+            "README.md",
+            "ThesisGuard_v1.2_适配评估与访谈记录_2026-09-14.md",
+            "v1.3_validation_plan.md",
+            "个人交易系统_v1.0_审查与优化建议_2026-09-14.md",
+            "个人交易系统_v1.2_产业趋势中短期波段适配审计_2026-09-14.md",
+            "实验仓_v1.2_验收案例.md",
+            "生益科技_持仓风险卡_2026-09-14.md",
+        )
+        for name in top_level_files:
+            self.assertTrue((ROOT / name).is_file(), name)
+        self.assertTrue((ROOT / "tests").is_dir())
+        self.assertTrue((ROOT / "decisions").is_dir())
 
     def test_no_absolute_users_markdown_links(self):
         findings = []

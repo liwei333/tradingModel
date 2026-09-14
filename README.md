@@ -18,15 +18,17 @@
 
 | 类别 | 文件 | 状态 | 版本关系与用途 |
 |---|---|---|---|
-| 当前正式交易模型 | 暂无独立标为 `ACTIVE` 的模型文件 | — | [ThesisGuard v1.3 个人适配草案](./ThesisGuard_个人交易模型_v1.3_个人适配草案.md)是系统 v1.2 引用的模型依据，但该文件自身明确为未自动生效的 `CANDIDATE`；系统 v1.2 已写入的六维权重与共同规则以系统正文为准 |
-| 当前正式交易系统 v1.2 | [个人交易系统 v1.2：正常仓与实验仓分轨执行版](./个人交易系统_v1.2_基于ThesisGuard_v1.3.md) | `ACTIVE` | 当前唯一正式执行基线；Setup B、NORMAL、EXPERIMENTAL、RED、账户风控与退出均以本文为准 |
+| 当前正式交易模型 | 暂无独立标为 `ACTIVE` 的模型文件 | — | [ThesisGuard v1.3 个人适配草案](./last/ThesisGuard_个人交易模型_v1.3_个人适配草案.md)是系统 v1.2 引用的模型依据，但该文件自身明确为未自动生效的 `CANDIDATE`；系统 v1.2 已写入的六维权重与共同规则以系统正文为准 |
+| 当前正式交易系统 v1.2 | [个人交易系统 v1.2：正常仓与实验仓分轨执行版](./last/个人交易系统_v1.2_基于ThesisGuard_v1.3.md) | `ACTIVE` | 当前唯一正式执行基线；Setup B、NORMAL、EXPERIMENTAL、RED、账户风控与退出均以本文为准 |
 | v1.2 实验仓验收 | [实验仓 v1.2 验收案例](./实验仓_v1.2_验收案例.md) | `ACTIVE` | 记录 8 个必测案例、36 项文本边界及自动测试范围；不替代 v1.2 正文 |
 | v1.2 产业趋势波段审计 | [v1.2 产业趋势中短期波段适配审计](./个人交易系统_v1.2_产业趋势中短期波段适配审计_2026-09-14.md) | `CANDIDATE` | 审计结论及 v1.3 建议来源；其中建议不自动生效 |
-| v1.3 Candidate | [个人交易系统 v1.3 产业趋势波段版 Candidate](./个人交易系统_v1.3_产业趋势波段版_CANDIDATE.md) | `CANDIDATE` | 建立下一版本框架；不替代 v1.2，不是正式实盘系统 |
+| v1.3 Candidate | [个人交易系统 v1.3 产业趋势波段版 Candidate](./IterationRecord/个人交易系统_v1.3_产业趋势波段版_CANDIDATE.md) | `CANDIDATE` | 建立下一版本框架；不替代 v1.2，不是正式实盘系统 |
 | v1.3 验证计划 | [v1.3 validation plan](./v1.3_validation_plan.md) | `CANDIDATE` | 保存 A/B/C 信号、退出平行结果、MFE、MAE、Expectancy、Profit Factor 与 20/60 日结果 |
 | 组合容量决议 | [ADR-001：主动股票容量与 Replacement PK](./decisions/ADR-001-portfolio-capacity.md) | `CANDIDATE` | 采纳与不采纳方案均待人工确认；当前不生效 |
 
 当前模型治理存在一个已披露状态：模型 v1.3 文件名和正文均为草案，因此本轮不把它擅自标为 `ACTIVE`。正式系统 v1.2 已经明确引用并固化的模型规则继续有效；模型文件本身是否升为正式版本，需另行决议。
+
+历史或候选的交易系统、交易模型文档统一收录在 [IterationRecord 迭代版本索引](./IterationRecord/README.md)，当前交易模型和正式交易系统统一放在 `last/`。README、验证计划、风险卡、审查、审计、验收、tests 和 ADR 等其他类型文件保持原有位置。
 
 ## v1.3 Candidate 的当前边界
 
@@ -47,10 +49,10 @@
 
 | 文件 | 状态 | 用途 |
 |---|---|---|
-| [ThesisGuard 模型 v1.2 可测量版](./ThesisGuard_个人交易模型_v1.2_可测量版.md) | `HISTORICAL` | 原始模型基线 |
+| [ThesisGuard 模型 v1.2 可测量版](./IterationRecord/ThesisGuard_个人交易模型_v1.2_可测量版.md) | `HISTORICAL` | 原始模型基线 |
 | [v1.2 适配评估与访谈记录](./ThesisGuard_v1.2_适配评估与访谈记录_2026-09-14.md) | `HISTORICAL` | 模型适配过程与已知限制 |
-| [个人交易系统 v1.1](./个人交易系统_v1.1_基于ThesisGuard_v1.3.md) | `HISTORICAL` | v1.2 的完整修订基线，不得与 v1.2 混用参数 |
-| [个人交易系统 v1.0](./个人交易系统_v1.0_基于ThesisGuard_v1.3.md) | `HISTORICAL` | 初始系统版本 |
+| [个人交易系统 v1.1](./IterationRecord/个人交易系统_v1.1_基于ThesisGuard_v1.3.md) | `HISTORICAL` | v1.2 的完整修订基线，不得与 v1.2 混用参数 |
+| [个人交易系统 v1.0](./IterationRecord/个人交易系统_v1.0_基于ThesisGuard_v1.3.md) | `HISTORICAL` | 初始系统版本 |
 | [v1.0 审查与优化建议](./个人交易系统_v1.0_审查与优化建议_2026-09-14.md) | `HISTORICAL` | v1.0 审查记录 |
 | [生益科技旧仓风险卡](./生益科技_持仓风险卡_2026-09-14.md) | `ACTIVE` | 独立旧仓管理卡；是否启用仍以卡片与账户登记为准 |
 
